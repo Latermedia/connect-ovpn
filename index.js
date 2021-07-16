@@ -36,8 +36,8 @@ function execShellCommand(cmd) {
       console.log(`Starting to ping ${pingURL} to verify the connect status`)
       ping.promise
         .probe(pingURL, {
-          timeout: 15,
-          min_reply: 15,
+          timeout: 10,
+          min_reply: 10,
         })
         .then(function (res) {
           if (res.alive) {
