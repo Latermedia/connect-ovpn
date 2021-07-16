@@ -1,0 +1,25 @@
+# action.yml
+name: 'Connect to VPN using OVPN'
+description: 'GitHub Action to connect to the VPN'
+inputs:
+  ovpn:
+    description: 'The location of the .ovpn profile file'
+    required: true
+  ca-crt:
+    description: 'Base64 crt'
+    required: true
+  user-crt:
+    description: 'Base64 user crt'
+    required: true
+  user-key:
+    description: 'Base64 user key'
+    required: true
+  ping-url:
+    description: 'URL to use to verify connection is oK'
+    required: false
+outputs:
+  STATUS:
+    description: 'Status for check connect vpn'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
