@@ -33,6 +33,7 @@ function execShellCommand(cmd) {
     execShellCommand(`sudo openvpn --config ${profileAbsolutePath} --daemon`)
 
     if (pingURL) {
+      console.log(`Starting to ping ${pingUrl} to verify the connect status`)
       ping.promise
         .probe(pingURL, {
           timeout: 15,
